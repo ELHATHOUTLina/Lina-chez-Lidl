@@ -1,0 +1,186 @@
+.candidate-categories {
+  margin-block: 0 56px;
+  padding-block: 6px 12px;
+}
+
+.candidate-categories__title {
+  margin-bottom: 26px;
+  color: var(--ink);
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -.5px;
+  text-align: center;
+}
+
+.candidate-categories__hint {
+  display: none;
+}
+
+.candidate-categories__track {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 10px 6px 16px;
+  list-style: none;
+}
+
+.candidate-categories__item {
+  min-width: 0;
+}
+
+.candidate-categories__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  height: 100%;
+  padding: 6px 4px 8px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.candidate-categories__circle {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: clamp(94px, 8.3vw, 116px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--category-color);
+  color: var(--white);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.candidate-categories__circle svg {
+  width: 52%;
+  height: 52%;
+}
+
+.candidate-categories__label {
+  max-width: 150px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  transition: color 180ms ease;
+}
+
+.candidate-categories__link:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 0;
+}
+
+.candidate-categories__link:focus-visible .candidate-categories__circle {
+  transform: scale(1.05);
+}
+
+.candidate-categories__link:focus-visible .candidate-categories__label {
+  color: var(--blue);
+}
+
+.candidate-categories__notice {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 12px 6px 0;
+  padding: 12px 14px 12px 17px;
+  border-left: 3px solid var(--blue);
+  border-radius: 3px;
+  background: #f2f7fd;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.candidate-categories__notice strong {
+  color: var(--blue);
+}
+
+.candidate-categories__notice button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  border: 0;
+  border-radius: 4px;
+  color: var(--blue);
+  background: transparent;
+}
+
+.candidate-categories__notice button:hover {
+  background: #e1ecfa;
+}
+
+@media (hover: hover) {
+  .candidate-categories__link:hover .candidate-categories__circle {
+    transform: scale(1.06);
+    box-shadow: 0 6px 16px #142c4c1a;
+  }
+
+  .candidate-categories__link:hover .candidate-categories__label {
+    color: var(--blue);
+  }
+}
+
+@media (max-width: 1199px) {
+  .candidate-categories__track { gap: 10px; }
+  .candidate-categories__label { font-size: 12px; }
+}
+
+@media (max-width: 959px) {
+  .candidate-categories__title { margin-bottom: 13px; }
+
+  .candidate-categories__hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-bottom: 9px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .candidate-categories__track {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: 6px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #aab6c4 #f2f5f8;
+  }
+
+  .candidate-categories__item {
+    flex: 0 0 128px;
+    scroll-snap-align: start;
+  }
+
+  .candidate-categories__circle { width: 108px; }
+  .candidate-categories__label { font-size: 13px; }
+}
+
+@media (max-width: 599px) {
+  .candidate-categories { margin-bottom: 36px; }
+  .candidate-categories__title { max-width: 340px; margin-inline: auto; font-size: 21px; }
+  .candidate-categories__track { gap: 12px; }
+  .candidate-categories__item { flex-basis: 122px; }
+  .candidate-categories__link { gap: 13px; }
+  .candidate-categories__circle { width: 102px; }
+  .candidate-categories__label { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .candidate-categories__track { scroll-behavior: auto; }
+  .candidate-categories__circle,
+  .candidate-categories__label { transition: none; }
+  .candidate-categories__link:hover .candidate-categories__circle,
+  .candidate-categories__link:focus-visible .candidate-categories__circle { transform: none; }
+}
