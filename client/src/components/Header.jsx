@@ -4,13 +4,12 @@ import Brand from './Brand';
 import SearchBar from './SearchBar';
 import SectionLink from './SectionLink';
 import NavigationMenu from './NavigationMenu';
-import TicketPreview from './TicketPreview';
 import useSectionNavigation from '../hooks/useSectionNavigation';
 import { mainNavigation, sections } from '../data/navigation.mjs';
 import { profile } from '../data/profile';
 import '../styles/header.css';
 
-export default function Header() {
+export default function Header({ onOpenTicket, ticketOpen }) {
   const [panel, setPanel] = useState(null);
   const { navigate, notice, clearNotice } = useSectionNavigation();
 
@@ -22,7 +21,7 @@ export default function Header() {
         <div className="location"><span className="location__icon"><MapPin size={19} aria-hidden="true" /></span><span><strong>{profile.location}</strong><span>{profile.mobility}</span></span></div>
         <div className="header-actions">
           <SectionLink id="a-propos" onNavigate={navigate} className="header-action" aria-label="Profil — À propos de moi"><UserRound size={24} strokeWidth={1.5} aria-hidden="true" /><span>Mon profil</span></SectionLink>
-          <button className="header-action" type="button" aria-label="Panier — ouvrir le ticket de candidature" aria-haspopup="dialog" aria-expanded={panel === 'ticket'} onClick={() => setPanel('ticket')}><ShoppingCart size={25} strokeWidth={1.5} aria-hidden="true" /><span>Mon ticket</span></button>
+          <button className="header-action" type="button" aria-label="Panier — ouvrir le ticket de candidature" aria-haspopup="dialog" aria-expanded={ticketOpen} onClick={onOpenTicket}><ShoppingCart size={25} strokeWidth={1.5} aria-hidden="true" /><span>Mon ticket</span></button>
           <button className="header-action" type="button" aria-label="Ouvrir le menu de navigation" aria-haspopup="dialog" aria-expanded={panel === 'menu'} onClick={() => setPanel('menu')}><Menu size={26} strokeWidth={1.5} aria-hidden="true" /><span>Menu</span></button>
         </div>
       </div>
@@ -36,6 +35,5 @@ export default function Header() {
     </header>
     {notice && <div className="navigation-notice" role="status"><span><strong>{notice.title}</strong>{notice.message}</span><button type="button" aria-label="Fermer le message" onClick={clearNotice}><X size={19} aria-hidden="true" /></button></div>}
     <NavigationMenu open={panel === 'menu'} onClose={() => setPanel(null)} onNavigate={navigate} />
-    <TicketPreview open={panel === 'ticket'} onClose={() => setPanel(null)} />
   </>;
 }

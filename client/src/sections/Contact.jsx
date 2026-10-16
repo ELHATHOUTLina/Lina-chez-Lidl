@@ -1,2 +1,93 @@
-import SectionPlaceholder from '../components/SectionPlaceholder';
-export default function Contact() { return <SectionPlaceholder id="contact" label="Mon CV et mes coordonnées" />; }
+import { useEffect, useState } from 'react';
+import QRCode from 'qrcode';
+import { Check, Clock3, Copy, Download, ExternalLink, Mail, MapPin, Phone, QrCode, Store } from 'lucide-react';
+import { profile } from '../data/profile';
+import { publicSiteUrl } from '../data/site';
+import '../styles/contact.css';
+
+const facts = [
+  { Icon: MapPin, label: 'Mantes-la-Jolie (78)' },
+  { Icon: Store, label: 'Mobile dans tout le département 78' },
+  { Icon: Check, label: 'Disponible immédiatement' },
+  { Icon: Clock3, label: 'Temps plein 35 h' },
+  { Icon: Check, label: 'CDD ou CDI' },
+];
+
+export default function Contact() {
+  const [copyStatus, setCopyStatus] = useState('');
+  const [qrSource, setQrSource] = useState('');
+
+  useEffect(() => {
+    if (!publicSiteUrl) return;
+    QRCode.toDataURL(publicSiteUrl, { width: 260, margin: 2, color: { dark: '#003e85', light: '#ffffff' } })
+      .then(setQrSource)
+      .catch(() => setQrSource(''));
+  }, []);
+
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+    } catch {
+      const field = document.createElement('textarea');
+      field.value = profile.email;
+      field.setAttribute('readonly', '');
+      field.style.position = 'fixed';
+      field.style.opacity = '0';
+      document.body.appendChild(field);
+      field.select();
+      document.execCommand('copy');
+      field.remove();
+    }
+    setCopyStatus('Adresse e-mail copiée');
+  }
+
+  return (
+    <section id="contact" className="contact-section" aria-labelledby="contact-title" tabIndex={-1} data-section-ready="true">
+      <div className="contact-section__inner page-width">
+        <header className="contact-section__heading">
+          <p>CONTACT &amp; CV</p>
+          <h2 id="contact-title">On se retrouve en magasin&nbsp;?</h2>
+          <span>Je suis disponible pour échanger sur une opportunité en caisse ou en mise en rayon dans les Yvelines.</span>
+        </header>
+
+        <div className="contact-section__layout">
+          <article className="contact-card">
+            <div className="contact-card__identity">
+              <span className="contact-card__initials" aria-hidden="true">LEH</span>
+              <div><h3>{profile.name}</h3><p>Candidate employée polyvalente / caisse</p></div>
+            </div>
+            <ul className="contact-facts">
+              {facts.map(({ Icon, label }) => <li key={label}><Icon size={18} aria-hidden="true" /><span>{label}</span></li>)}
+            </ul>
+            <div className="contact-direct">
+              <a href={profile.phoneHref}><Phone size={18} aria-hidden="true" /><span><small>Téléphone</small>{profile.phone}</span></a>
+              <a href={`mailto:${profile.email}`}><Mail size={18} aria-hidden="true" /><span><small>E-mail</small>{profile.email}</span></a>
+            </div>
+          </article>
+
+          <div className="contact-actions-panel">
+            <div className="contact-actions" aria-label="Actions de contact et du CV">
+              <a className="contact-button contact-button--yellow" href={profile.cv} download="CV-provisoire-Lina-EL-HATHOUT.pdf"><Download size={19} aria-hidden="true" />Télécharger mon CV</a>
+              <a className="contact-button" href={profile.cv} target="_blank" rel="noreferrer"><ExternalLink size={19} aria-hidden="true" />Voir mon CV</a>
+              <a className="contact-button" href={`mailto:${profile.email}`}><Mail size={19} aria-hidden="true" />M’envoyer un e-mail</a>
+              <a className="contact-button" href={profile.phoneHref}><Phone size={19} aria-hidden="true" />M’appeler</a>
+              <button className="contact-button" type="button" onClick={copyEmail}>{copyStatus ? <Check size={19} aria-hidden="true" /> : <Copy size={19} aria-hidden="true" />}{copyStatus || 'Copier mon adresse e-mail'}</button>
+            </div>
+            <p className="contact-actions-panel__notice"><strong>CV provisoire</strong> — ce document sera remplacé par une version spécifiquement adaptée à Lidl.</p>
+            <p className="sr-only" role="status" aria-live="polite">{copyStatus}</p>
+          </div>
+
+          <aside className="qr-card" aria-labelledby="qr-title">
+            <div className="qr-card__frame">
+              {qrSource ? <img src={qrSource} alt="QR code vers le site public de la candidature" /> : <QrCode size={68} strokeWidth={1.2} aria-hidden="true" />}
+            </div>
+            <h3 id="qr-title">Retrouver cette candidature</h3>
+            {publicSiteUrl
+              ? <a href={publicSiteUrl}>Ouvrir le site public</a>
+              : <p>Le QR code sera activé dès que l’adresse publique du site sera disponible.</p>}
+          </aside>
+        </div>
+      </div>
+    </section>
+  );
+}

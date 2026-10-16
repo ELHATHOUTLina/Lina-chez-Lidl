@@ -10,6 +10,9 @@ export const profile = {
   schedule: 'Week-ends inclus, dès 5 h selon planning',
   commitment: 'Au moins 8 mois',
   education: 'Licence MIAGE, Université d’Évry – Paris-Saclay',
+  phone: '07 65 87 44 68',
+  phoneHref: 'tel:+33765874468',
+  email: 'elhathout.lina@gmail.com',
   logo: '/assets/logo/lina-chez-lidl.png',
   cv: '/documents/cv_vente.pdf',
 };

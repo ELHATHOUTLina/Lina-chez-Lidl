@@ -1,0 +1,31 @@
+.site-footer { background: #00336e; color: white; }
+.site-footer__main { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 75px; padding-block: 48px; }
+.site-footer__brand > a { display: inline-flex; align-items: center; gap: 13px; }
+.site-footer__brand img { width: 58px; height: 58px; object-fit: cover; }
+.site-footer__brand strong { font-size: 19px; }
+.site-footer__brand > p { max-width: 370px; margin-top: 18px; color: #ccdaea; font-size: 11px; line-height: 1.65; }
+.site-footer h2 { margin: 0 0 16px; color: var(--yellow); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+.site-footer__nav ul { display: grid; grid-template-columns: 1fr 1fr; gap: 11px 20px; margin: 0; padding: 0; list-style: none; }
+.site-footer__nav a, .site-footer__contact a { color: #dce7f3; font-size: 11px; line-height: 1.45; }
+.site-footer a:hover { color: var(--yellow); }
+.site-footer__contact { display: flex; flex-direction: column; align-items: flex-start; gap: 11px; }
+.site-footer__contact h2 { margin-bottom: 5px; }
+.site-footer__contact a { display: flex; align-items: center; gap: 9px; overflow-wrap: anywhere; }
+.site-footer__contact svg { color: var(--yellow); }
+.site-footer__top { margin-top: 8px; font-weight: 700; }
+.site-footer__legal { border-top: 1px solid #ffffff24; }
+.site-footer__legal > div { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding-block: 19px; color: #aec3da; font-size: 9px; line-height: 1.55; }
+.site-footer__legal p { max-width: 700px; }
+.site-footer__legal span { white-space: nowrap; }
+
+@media (max-width: 850px) {
+  .site-footer__main { grid-template-columns: 1fr 1fr; gap: 38px; }
+  .site-footer__brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 599px) {
+  .site-footer__main { grid-template-columns: 1fr; gap: 34px; padding-block: 40px; }
+  .site-footer__brand { grid-column: auto; }
+  .site-footer__nav ul { grid-template-columns: 1fr; }
+  .site-footer__legal > div { align-items: flex-start; flex-direction: column; gap: 12px; }
+}
