@@ -1,5 +1,5 @@
 .hero {
-  margin-block: 32px 48px;
+  margin-block: 32px 32px;
   color: var(--white);
 }
 
@@ -180,9 +180,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: clamp(250px, 24vw, 340px);
   aspect-ratio: 1;
+  padding-top: 18%;
   border-radius: 50%;
   background: var(--yellow);
   color: var(--blue);
@@ -190,7 +191,6 @@
 }
 
 .hero__mobility-label {
-  margin-top: 6px;
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 2px;
@@ -200,7 +200,7 @@
   margin-left: 12px;
   font-size: clamp(108px, 10.7vw, 154px);
   font-weight: 900;
-  line-height: 1.12;
+  line-height: .9;
   letter-spacing: -10px;
 }
 
@@ -209,9 +209,13 @@
 }
 
 .hero__mobility-footer {
-  margin-top: 2px;
-  font-size: 13px;
-  font-weight: 700;
+  position: relative;
+  z-index: 2;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .hero__outline {
@@ -236,13 +240,13 @@
 .hero__contract {
   position: absolute;
   z-index: 2;
-  left: -8px;
-  bottom: 22px;
-  padding: 14px 24px;
+  right: -6px;
+  bottom: 8px;
+  padding: 12px 20px;
   border-bottom: 4px solid var(--red);
   color: var(--blue);
   background: white;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 800;
   letter-spacing: .5px;
   transform: rotate(-7deg);
@@ -293,7 +297,7 @@
   .hero__mobility { width: 260px; }
   .hero__outline { width: 282px; }
   .hero__department { font-size: 116px; }
-  .hero__contract { left: -3px; bottom: 20px; padding: 12px 18px; font-size: 18px; }
+  .hero__contract { right: -4px; bottom: 8px; padding: 11px 17px; font-size: 17px; }
 }
 
 @media (max-width: 959px) {
@@ -303,7 +307,18 @@
     padding: 34px;
   }
 
-  .hero__art { display: none; }
+  .hero__art {
+    display: grid;
+    width: min(100%, 390px);
+    min-height: 315px;
+    margin: 2px auto -8px;
+  }
+
+  .hero__mobility { width: 270px; }
+  .hero__outline { width: 292px; }
+  .hero__department { font-size: 120px; }
+  .hero__contract { right: 6px; bottom: 5px; }
+  .hero__red-corner { top: 54%; left: 45%; width: 260px; height: 260px; }
   .hero__banner::before {
     content: '';
     position: absolute;
@@ -326,7 +341,7 @@
 }
 
 @media (max-width: 599px) {
-  .hero { margin-block: 20px 32px; }
+  .hero { margin-block: 20px 20px; }
   .hero__banner { padding: 28px 23px 30px; }
   .hero__badge { padding: 7px 9px; font-size: 10px; }
   .hero__name { column-gap: 13px; margin-top: 25px; }
@@ -344,6 +359,16 @@
   .hero__primary svg { position: absolute; right: 15px; }
   .hero__notice { font-size: 11px; }
   .hero__banner::before { top: -70px; right: -70px; width: 130px; height: 130px; border-width: 18px; }
+  .hero__art { width: 100%; min-height: 286px; margin-top: 0; margin-bottom: -14px; }
+  .hero__mobility { width: min(250px, calc(100% - 18px)); }
+  .hero__mobility-label { font-size: 11px; letter-spacing: 1.6px; }
+  .hero__department { margin-left: 8px; font-size: 108px; letter-spacing: -8px; }
+  .hero__mobility-footer { margin-top: 10px; font-size: 12px; }
+  .hero__outline { width: min(270px, 100%); }
+  .hero__red-corner { top: 56%; left: 47%; width: 225px; height: 225px; }
+  .hero__contract { right: 0; bottom: 3px; padding: 10px 14px; font-size: 15px; }
+  .hero__spark--one { top: 5px; right: 11px; }
+  .hero__spark--two { top: 27px; right: -1px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
