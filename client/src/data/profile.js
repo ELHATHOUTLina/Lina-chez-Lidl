@@ -14,7 +14,7 @@ export const profile = {
   phoneHref: 'tel:+33765874468',
   email: 'elhathout.lina@gmail.com',
   logo: '/assets/logo/lina-chez-lidl.png',
-  cv: '/documents/cv_vente.pdf',
+  cv: '/documents/CV_Lidl.pdf',
 };
 
 // À compléter lors de la section Expériences, à partir du CV fourni.

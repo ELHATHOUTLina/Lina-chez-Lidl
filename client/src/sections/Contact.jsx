@@ -67,13 +67,12 @@ export default function Contact() {
 
           <div className="contact-actions-panel">
             <div className="contact-actions" aria-label="Actions de contact et du CV">
-              <a className="contact-button contact-button--yellow" href={profile.cv} download="CV-provisoire-Lina-EL-HATHOUT.pdf"><Download size={19} aria-hidden="true" />Télécharger mon CV</a>
+              <a className="contact-button contact-button--yellow" href={profile.cv} download="CV-Lina-EL-HATHOUT-Lidl.pdf"><Download size={19} aria-hidden="true" />Télécharger mon CV</a>
               <a className="contact-button" href={profile.cv} target="_blank" rel="noreferrer"><ExternalLink size={19} aria-hidden="true" />Voir mon CV</a>
               <a className="contact-button" href={`mailto:${profile.email}`}><Mail size={19} aria-hidden="true" />M’envoyer un e-mail</a>
               <a className="contact-button" href={profile.phoneHref}><Phone size={19} aria-hidden="true" />M’appeler</a>
               <button className="contact-button" type="button" onClick={copyEmail}>{copyStatus ? <Check size={19} aria-hidden="true" /> : <Copy size={19} aria-hidden="true" />}{copyStatus || 'Copier mon adresse e-mail'}</button>
             </div>
-            <p className="contact-actions-panel__notice"><strong>CV provisoire</strong> — ce document sera remplacé par une version spécifiquement adaptée à Lidl.</p>
             <p className="sr-only" role="status" aria-live="polite">{copyStatus}</p>
           </div>
 
