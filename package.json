@@ -1,0 +1,15 @@
+{
+  "name": "lina-chez-lidl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Candidature personnelle de Lina EL HATHOUT, inspirée de l’univers Lidl.",
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "npm run build --workspace client",
+    "start": "npm start --workspace server",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=20.19.0", "npm": ">=10" }
+}
+
