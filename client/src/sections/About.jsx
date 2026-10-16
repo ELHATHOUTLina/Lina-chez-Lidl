@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import AboutVisual from '../components/AboutVisual';
 import { about } from '../data/about';
 import '../styles/about.css';
 
@@ -25,22 +24,10 @@ export default function About() {
       ref={section}
       id="a-propos"
       className="candidate-about page-width"
-      aria-labelledby="about-title"
+      aria-labelledby="why-lidl-title"
       tabIndex={-1}
       data-section-ready="true"
     >
-      <div className="candidate-about__intro" data-about-reveal>
-        <div className="candidate-about__text">
-          <p className="candidate-about__eyebrow">FAISONS CONNAISSANCE</p>
-          <h2 id="about-title">Derrière cette candidature,<br className="candidate-about__break" /> il y a <span>Lina.</span></h2>
-          <div className="candidate-about__paragraphs">
-            {about.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
-          <p className="candidate-about__intent">Mon objectif est de travailler en magasin, au contact des clients et de l’équipe, dans la durée.</p>
-        </div>
-        <AboutVisual photo={about.photo} photoAlt={about.photoAlt} />
-      </div>
-
       <div className="candidate-about__motivations" aria-labelledby="why-lidl-title">
         <h3 id="why-lidl-title">Pourquoi je souhaite rejoindre Lidl ?</h3>
         <ul className="candidate-about__cards">

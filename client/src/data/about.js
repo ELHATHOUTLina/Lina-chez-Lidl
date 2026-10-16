@@ -1,15 +1,6 @@
 import { Layers3, MessageCircle, UsersRound } from 'lucide-react';
 
 export const about = {
-  // Ajouter ici le chemin d’une vraie photo : '/assets/images/lina.jpg'.
-  photo: null,
-  photoAlt: 'Portrait de Lina EL HATHOUT',
-  paragraphs: [
-    'Je m’appelle Lina EL HATHOUT, j’ai 21 ans et je suis basée à Mantes-la-Jolie.',
-    'Titulaire d’une licence MIAGE en informatique, je souhaite aujourd’hui travailler dans la grande distribution, au contact des clients et au sein d’une équipe.',
-    'Mes expériences dans la vente et la mise en rayon m’ont permis de découvrir un environnement de travail concret et dynamique, dans lequel j’aimerais continuer à évoluer.',
-    'Je recherche un poste à temps plein, en CDD ou CDI, et je suis disponible immédiatement.',
-  ],
   motivations: [
     {
       id: 'client',
