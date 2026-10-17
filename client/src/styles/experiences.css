@@ -1,0 +1,56 @@
+.weekly-deals { margin-block: 0 68px; padding-top: 12px; }
+.weekly-deals__heading { margin-bottom: 29px; text-align: center; }
+.weekly-deals__heading > p { margin-bottom: 10px; color: var(--blue); font-size: 10px; font-weight: 800; line-height: 1.5; letter-spacing: 1.4px; }
+.weekly-deals__heading h2 { font-size: clamp(29px, 3.4vw, 45px); font-weight: 800; line-height: 1.15; letter-spacing: -1.2px; }
+.weekly-deals__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.experience-card { display: flex; min-width: 0; min-height: 510px; overflow: hidden; flex-direction: column; border: 1px solid #dfe5ec; border-radius: 8px; background: white; box-shadow: 0 2px 10px #16304e08; transition: transform 180ms ease, box-shadow 180ms ease; }
+.experience-card__image { min-height: 330px; flex: 1 1 auto; overflow: hidden; background: #f0f3f6; }
+.experience-card__image > img, .volunteering-card__image > img { width: 100%; height: 100%; object-fit: cover; }
+.experience-image__placeholder { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; min-height: inherit; flex-direction: column; gap: 11px; border: 1px dashed #9dadbd; color: #607080; background: repeating-linear-gradient(135deg, #f4f6f8 0 12px, #edf1f4 12px 24px); font-size: 12px; font-weight: 700; }
+.experience-card__content { min-height: 180px; padding: 22px 24px 24px; color: white; background: var(--card-color); }
+.experience-card--blue { --card-color: #0050aa; }
+.experience-card--orange { --card-color: #e86f16; }
+.experience-card--navy { --card-color: #173c7d; }
+.experience-card__content > p, .volunteering-card__content > p { margin-bottom: 8px; color: var(--yellow); font-size: 9px; font-weight: 800; line-height: 1.4; letter-spacing: 1.2px; }
+.experience-card__content h3 { margin: 0; font-size: 25px; line-height: 1.2; letter-spacing: -.5px; }
+.experience-card__content ul { display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 15px 0 0; padding: 0; list-style: none; }
+.experience-card__content li { padding: 5px 8px; border-radius: 3px; background: #ffffff18; font-size: 11px; font-weight: 600; line-height: 1.35; }
+.volunteering-card { display: grid; grid-template-columns: minmax(260px, .85fr) minmax(0, 1.4fr); min-height: 250px; margin-top: 20px; overflow: hidden; border-radius: 8px; background: #e30613; color: white; box-shadow: 0 2px 10px #16304e08; transition: transform 180ms ease, box-shadow 180ms ease; }
+.volunteering-card__content { display: flex; justify-content: center; min-width: 0; flex-direction: column; padding: 36px 40px; }
+.volunteering-card__content > p { color: white; opacity: .82; }
+.volunteering-card__content h3 { margin: 0; font-size: clamp(26px, 3vw, 39px); line-height: 1.08; letter-spacing: -1px; }
+.volunteering-card__content strong { margin-top: 15px; color: var(--yellow); font-size: 16px; }
+.volunteering-card__image { min-height: 250px; overflow: hidden; border: 12px solid #e30613; border-left: 0; }
+.volunteering-card__image .experience-image__placeholder { border-color: #ffffff8a; color: white; background: repeating-linear-gradient(135deg, #c90510 0 12px, #d80a15 12px 24px); }
+
+@media (hover: hover) {
+  .experience-card:hover, .volunteering-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px #142c4c18; }
+}
+
+@media (max-width: 900px) {
+  .weekly-deals__grid { gap: 14px; }
+  .experience-card { min-height: 460px; }
+  .experience-card__image { min-height: 285px; }
+  .experience-card__content { min-height: 175px; padding: 19px; }
+  .experience-card__content h3 { font-size: 21px; }
+  .volunteering-card { grid-template-columns: minmax(235px, .8fr) minmax(0, 1fr); }
+  .volunteering-card__content { padding: 30px; }
+}
+
+@media (max-width: 699px) {
+  .weekly-deals { margin-bottom: 42px; }
+  .weekly-deals__heading { margin-bottom: 23px; }
+  .weekly-deals__heading h2 { font-size: 30px; }
+  .weekly-deals__grid { grid-template-columns: minmax(0, 1fr); gap: 15px; }
+  .experience-card { min-height: 0; }
+  .experience-card__image { min-height: 300px; aspect-ratio: 4 / 3; }
+  .experience-card__content { min-height: 0; padding: 21px; }
+  .volunteering-card { grid-template-columns: minmax(0, 1fr); margin-top: 15px; }
+  .volunteering-card__content { padding: 29px 23px; }
+  .volunteering-card__image { min-height: 230px; border: 10px solid #e30613; border-top: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-card, .volunteering-card { transition: none; }
+  .experience-card:hover, .volunteering-card:hover { transform: none; }
+}
