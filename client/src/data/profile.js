@@ -8,7 +8,6 @@ export const profile = {
   weeklyHours: 35,
   availability: 'Immédiate',
   schedule: 'Week-ends inclus, dès 5 h selon planning',
-  commitment: 'Au moins 8 mois',
   education: 'Licence MIAGE, Université d’Évry – Paris-Saclay',
   phone: '07 65 87 44 68',
   phoneHref: 'tel:+33765874468',

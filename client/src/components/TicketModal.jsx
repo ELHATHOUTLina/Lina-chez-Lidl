@@ -14,7 +14,6 @@ const details = [
   ['Disponibilité', profile.availability],
   ['Localisation', profile.location],
   ['Mobilité', 'Département 78'],
-  ['Engagement envisagé', '8 mois minimum'],
 ];
 
 export default function TicketModal({ open, onClose }) {

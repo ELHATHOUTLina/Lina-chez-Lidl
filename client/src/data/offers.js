@@ -28,7 +28,7 @@ export const offersTabs = [
       { id: 'products', Icon: Store, title: 'Connaître les produits et les rayons', description: 'Découvrir l’organisation du magasin et me familiariser avec les produits.' },
       { id: 'precision', Icon: Gauge, title: 'Développer ma rapidité et ma précision', description: 'Gagner en efficacité au fil de l’apprentissage, en restant attentive à la qualité du travail.' },
       { id: 'team', Icon: UsersRound, title: 'M’intégrer durablement à une équipe', description: 'Apprendre à travailler avec mes collègues et trouver ma place dans le collectif.' },
-      { id: 'commitment', Icon: Handshake, title: 'M’engager au moins 8 mois', description: 'Construire un engagement d’au moins 8 mois au sein du magasin.', badge: 'Objectif : 8 mois minimum', badgeColor: 'red' },
+      { id: 'commitment', Icon: Handshake, title: 'M’investir dans la durée', description: 'Contribuer sérieusement au quotidien du magasin et progresser avec l’équipe.', badge: 'Objectif durable', badgeColor: 'red' },
     ],
   },
 ];
