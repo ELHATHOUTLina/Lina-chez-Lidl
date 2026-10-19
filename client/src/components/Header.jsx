@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { ArrowRight, ArrowUp, Check, MapPin, Menu, ShoppingCart, UserRound, X } from 'lucide-react';
+import { ArrowRight, Check, MapPin, Menu, ShoppingCart, UserRound, X } from 'lucide-react';
 import Brand from './Brand';
 import SearchBar from './SearchBar';
 import SectionLink from './SectionLink';
 import NavigationMenu from './NavigationMenu';
 import useSectionNavigation from '../hooks/useSectionNavigation';
-import { mainNavigation, sections } from '../data/navigation.mjs';
 import { profile } from '../data/profile';
 import '../styles/header.css';
 
@@ -31,7 +30,6 @@ export default function Header({ onOpenTicket, ticketOpen }) {
           <div className="header-discovery"><SearchBar onNavigate={navigate} /><div className="header-discovery__bottom"><SectionLink id="a-propos" onNavigate={navigate} className="button button--yellow">Découvrir mon profil <ArrowRight size={19} aria-hidden="true" /></SectionLink><span className="availability"><Check size={16} aria-hidden="true" />Disponibilité immédiate</span></div></div>
         </div>
       </div>
-      <nav className="main-nav" aria-label="Navigation principale"><div className="page-width main-nav__inner"><ul>{mainNavigation.map((id) => <li key={id}><SectionLink id={id} onNavigate={navigate}>{sections.find((section) => section.id === id).label}</SectionLink></li>)}</ul><a className="back-top" href="#haut-de-page" onClick={(event) => { event.preventDefault(); navigate('haut-de-page'); }}>Haut de page <ArrowUp size={14} aria-hidden="true" /></a></div></nav>
     </header>
     {notice && <div className="navigation-notice" role="status"><span><strong>{notice.title}</strong>{notice.message}</span><button type="button" aria-label="Fermer le message" onClick={clearNotice}><X size={19} aria-hidden="true" /></button></div>}
     <NavigationMenu open={panel === 'menu'} onClose={() => setPanel(null)} onNavigate={navigate} />

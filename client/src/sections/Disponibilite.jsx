@@ -1,7 +1,12 @@
-import OffersTabs from '../components/OffersTabs';
+import { CalendarCheck2, Clock3, MapPin } from 'lucide-react';
 import '../styles/offers.css';
 
-// Section 5 : son emplacement après Experiences préserve la place du prompt 4.
+const availabilityCards = [
+  { id: 'immediate', Icon: CalendarCheck2, title: 'Immédiatement', description: 'Disponible dès maintenant' },
+  { id: 'hours', Icon: Clock3, title: '35 h / semaine', description: 'CDD ou CDI' },
+  { id: 'mobility', Icon: MapPin, title: 'Mobile dans le 78', description: 'Week-ends compris' },
+];
+
 export default function Disponibilite() {
   return (
     <section
@@ -12,11 +17,18 @@ export default function Disponibilite() {
       data-section-ready="true"
     >
       <header className="candidate-offers__heading">
-        <p className="candidate-offers__eyebrow">MA CANDIDATURE CHEZ LIDL</p>
-        <h2 id="offers-title">Prête aujourd’hui, motivée pour la suite.</h2>
-        <p className="candidate-offers__subtitle">Mes disponibilités et mes objectifs pour rejoindre votre équipe.</p>
+        <h2 id="offers-title">Prête à rejoindre Lidl</h2>
+        <p className="candidate-offers__subtitle">Mes disponibilités</p>
       </header>
-      <OffersTabs />
+      <ul className="offers-tabs__grid" aria-label="Mes disponibilités">
+        {availabilityCards.map(({ id, Icon, title, description }) => (
+          <li key={id} className="offer-card">
+            <span className="offer-card__icon"><Icon size={25} strokeWidth={1.8} aria-hidden="true" /></span>
+            <h3 className="offer-card__title">{title}</h3>
+            <p className="offer-card__description">{description}</p>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

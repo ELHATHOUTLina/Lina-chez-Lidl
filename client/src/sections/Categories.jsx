@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowLeft, ArrowRight, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import SectionLink from '../components/SectionLink';
 import useSectionNavigation from '../hooks/useSectionNavigation';
 import { categories } from '../data/categories';
@@ -13,21 +13,11 @@ export default function Categories() {
     <section
       id="categories"
       className="candidate-categories page-width"
-      aria-labelledby="categories-title"
       tabIndex={-1}
       data-section-ready="true"
     >
-      <h2 id="categories-title" className="candidate-categories__title">
-        Découvrez les rayons de ma candidature
-      </h2>
-      <p className="candidate-categories__hint" id="categories-hint">
-        <ArrowLeft size={13} aria-hidden="true" />
-        Faites défiler pour explorer les 7 rayons
-        <ArrowRight size={13} aria-hidden="true" />
-      </p>
-
       <nav aria-label="Rayons de ma candidature">
-        <ul className="candidate-categories__track" aria-describedby="categories-hint">
+        <ul className="candidate-categories__track">
           {categories.map(({ key, label, targetId, Icon, color }) => (
             <li key={key} className="candidate-categories__item">
               <SectionLink

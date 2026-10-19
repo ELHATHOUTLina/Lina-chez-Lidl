@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from './components/Header';
+import MainNavigation from './components/MainNavigation';
 import TicketModal from './components/TicketModal';
 import Candidature from './sections/Candidature';
 import Categories from './sections/Categories';
@@ -16,9 +17,8 @@ export default function App() {
 
   return <div id="haut-de-page" className="app">
     <a className="skip-link" href="#main-content">Aller au contenu principal</a>
-    <Header onOpenTicket={() => setTicketOpen(true)} ticketOpen={ticketOpen} />
     <main id="main-content" tabIndex={-1} aria-label="Contenu de la candidature">
-      <Candidature /><Categories /><Experiences /><Disponibilite /><About /><Skills /><Ticket onOpenTicket={() => setTicketOpen(true)} /><Contact />
+      <Header onOpenTicket={() => setTicketOpen(true)} ticketOpen={ticketOpen} /><Categories /><Candidature /><MainNavigation /><Experiences /><Disponibilite /><About /><Skills /><Ticket onOpenTicket={() => setTicketOpen(true)} /><Contact />
     </main>
     <Footer />
     <TicketModal open={ticketOpen} onClose={() => setTicketOpen(false)} />
