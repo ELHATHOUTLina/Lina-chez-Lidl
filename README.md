@@ -45,4 +45,4 @@ Express sert alors le dossier `client/dist` sur le port defini par `PORT` ou, pa
 
 ## Contact
 
-Les coordonnees affichees sur le site sont celles utilisees pour ma candidature. Le CV est accessible depuis la section « Mon CV & contact ».
+Le CV est accessible depuis la section « Mon CV & contact
