@@ -16,6 +16,3 @@ export const profile = {
   cv: '/documents/CV_Lidl.pdf',
 };
 
-// À compléter lors de la section Expériences, à partir du CV fourni.
-export const experiences = [];
-export const promotionalCards = [];

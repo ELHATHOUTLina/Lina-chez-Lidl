@@ -1,7 +1,6 @@
 import {
   CalendarCheck2,
   ClipboardCheck,
-  GraduationCap,
   HeartHandshake,
   Mail,
   ShoppingBasket,
@@ -13,7 +12,6 @@ import {
 export const categories = [
   { key: 'qualites', label: 'Mes qualités', targetId: 'a-propos', Icon: HeartHandshake, color: '#e30613' },
   { key: 'experiences', label: 'Mes expériences', targetId: 'experiences', Icon: ShoppingBasket, color: '#0050aa' },
-  { key: 'parcours', label: 'Mon parcours', targetId: 'a-propos', Icon: GraduationCap, color: '#a58b64' },
   { key: 'disponibilites', label: 'Mes disponibilités', targetId: 'disponibilite', Icon: CalendarCheck2, color: '#d65e1d' },
   { key: 'competences', label: 'Mes compétences terrain', targetId: 'competences', Icon: ClipboardCheck, color: '#20563d' },
   { key: 'pourquoi-lidl', label: 'Pourquoi Lidl ?', targetId: 'a-propos', Icon: Store, color: '#747b83' },

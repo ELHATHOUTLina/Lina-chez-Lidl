@@ -8,6 +8,8 @@
 
 .experience-card { --experience-accent: var(--blue); min-width: 0; overflow: hidden; border: 1px solid #dde4ec; border-radius: 9px; background: white; box-shadow: 0 4px 14px #193c6612; opacity: 0; transform: translateY(14px); transition: opacity 420ms ease-out, transform 420ms ease-out, box-shadow 190ms ease; transition-delay: calc(var(--card-index) * 85ms); }
 .weekly-deals--visible .experience-card { opacity: 1; transform: translateY(0); }
+.weekly-deals--animated:not(.weekly-deals--visible) .experience-card,
+.weekly-deals--animated:not(.weekly-deals--visible) .volunteering-card { opacity: 0; transform: translateY(14px); }
 .experience-card--aldi { --experience-accent: #0757aa; --experience-header: linear-gradient(135deg, #0870d1, #00469a); --badge-bg: #e4f2ff; --badge-color: #0757aa; }
 .experience-card--sucreation { --experience-accent: #ef5367; --experience-header: #89898b; --badge-bg: #ffe7eb; --badge-color: #d93852; }
 .experience-card--primark { --experience-accent: #0a4a94; --experience-header: linear-gradient(135deg, #163f7a, #082b61); --badge-bg: #e3f1ff; --badge-color: #0757aa; }
@@ -17,7 +19,6 @@
 .experience-card__company--sucreation { color: #ffabc7; font-family: "Segoe Script", "Brush Script MT", cursive; font-size: clamp(27px, 2.6vw, 38px); font-weight: 700; }
 .experience-card__company--primark { letter-spacing: .5px; }
 .experience-card__header p { margin-top: 8px; font-size: 14px; font-weight: 750; line-height: 1.25; }
-.experience-logo { display: block; flex: 0 0 auto; width: 76px; max-height: 76px; object-fit: contain; }
 .experience-card__body { position: relative; min-height: 285px; padding: 21px 20px 19px; }
 .experience-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px 18px; margin: 0; }
 .experience-fact { position: relative; display: grid; grid-template-columns: 23px minmax(0, 1fr); grid-template-rows: auto auto; min-width: 0; column-gap: 8px; }
@@ -32,10 +33,9 @@
 .weekly-deals--visible .volunteering-card { opacity: 1; transform: translateY(0); }
 .volunteering-card__identity { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 20px; overflow: hidden; padding: 34px 39px; color: white; background: #e30613; }
 .volunteering-card__identity::after { content: ''; position: absolute; right: -62px; bottom: -105px; width: 255px; height: 255px; border-radius: 52px; background: #bf0610; transform: rotate(43deg); }
-.volunteering-card__identity > div, .volunteering-card__identity .experience-logo { position: relative; z-index: 1; }
+.volunteering-card__identity > div { position: relative; z-index: 1; }
 .volunteering-card__identity h3 { max-width: 330px; margin: 0; font-size: clamp(29px, 3.4vw, 44px); line-height: 1.02; letter-spacing: -1.2px; }
 .volunteering-card__identity p { margin-top: 13px; font-size: 19px; font-weight: 700; }
-.volunteering-card__identity .experience-logo { width: 105px; max-height: 105px; }
 .volunteering-card__details { --experience-accent: #e3062e; --badge-bg: #ffe4e9; --badge-color: #dc1838; position: relative; display: flex; justify-content: center; min-width: 0; flex-direction: column; padding: 27px 30px 20px; }
 .volunteering-card__details .experience-facts { grid-template-columns: 1.4fr 1fr; gap: 16px 25px; }
 .volunteering-card__details .experience-skills { margin-top: 18px; padding-right: 60px; }

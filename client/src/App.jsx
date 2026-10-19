@@ -18,7 +18,7 @@ export default function App() {
   return <div id="haut-de-page" className="app">
     <a className="skip-link" href="#main-content">Aller au contenu principal</a>
     <main id="main-content" tabIndex={-1} aria-label="Contenu de la candidature">
-      <Header onOpenTicket={() => setTicketOpen(true)} ticketOpen={ticketOpen} /><Categories /><Candidature /><MainNavigation /><Experiences /><Disponibilite /><About /><Skills /><Ticket onOpenTicket={() => setTicketOpen(true)} /><Contact />
+      <Header onOpenTicket={() => setTicketOpen(true)} ticketOpen={ticketOpen} /><Categories /><Candidature /><MainNavigation /><Experiences /><Disponibilite /><Skills /><About /><Ticket onOpenTicket={() => setTicketOpen(true)} /><Contact />
     </main>
     <Footer />
     <TicketModal open={ticketOpen} onClose={() => setTicketOpen(false)} />

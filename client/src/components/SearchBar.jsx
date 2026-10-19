@@ -48,15 +48,15 @@ export default function SearchBar({ onNavigate }) {
         <div className="search__field">
           <Search size={22} className="search__leading" aria-hidden="true" />
           <label className="sr-only" htmlFor="candidate-search">Rechercher une section de ma candidature</label>
-          <input ref={input} id="candidate-search" type="search" placeholder="Recherchez une candidate motivée, sérieuse et disponible" value={query} onChange={(event) => { setQuery(event.target.value); setOpen(true); }} onFocus={() => setOpen(true)} aria-describedby="search-hint" aria-controls={expanded ? 'search-results' : undefined} />
+          <input ref={input} id="candidate-search" type="search" placeholder="Recherchez une candidate motivée, sérieuse et disponible" value={query} onChange={(event) => { setQuery(event.target.value); setOpen(true); }} onFocus={() => setOpen(true)} aria-describedby="search-hint" aria-expanded={expanded} aria-controls="search-results" />
           {hasQuery && <button className="search__clear" type="button" aria-label="Effacer la recherche" onClick={() => { setQuery(''); setOpen(false); input.current.focus(); }}><X size={17} aria-hidden="true" /></button>}
           <button className="search__submit" type="submit" aria-label="Lancer la recherche"><ArrowRight size={23} aria-hidden="true" /></button>
         </div>
       </form>
       <p id="search-hint" className="search__hint">Un mot-clé suffit : <button type="button" onClick={() => { setQuery('caisse'); setOpen(true); input.current.focus(); }}>caisse</button>, <button type="button" onClick={() => { setQuery('compétences'); setOpen(true); input.current.focus(); }}>compétences</button>, <button type="button" onClick={() => { setQuery('disponibilité'); setOpen(true); input.current.focus(); }}>disponibilité</button>…</p>
-      {expanded && <div className="search__results" id="search-results" ref={resultsList}>
+      {expanded && <div className="search__results" id="search-results" ref={resultsList} role="listbox" aria-label="Résultats de la recherche">
         <p className="search__result-heading" role="status">{results.length ? `${results.length} section${results.length > 1 ? 's' : ''} pour « ${query.trim()} »` : 'Aucune section trouvée'}</p>
-        {results.length ? <ul aria-label="Résultats de la recherche">{results.map((section) => <li key={section.id}><a href={`#${section.id}`} onClick={(event) => { event.preventDefault(); choose(section.id); }}><span>{section.label}</span>{isSectionReady(section.id) ? <ArrowRight size={17} aria-hidden="true" /> : <span className="coming-soon">À venir</span>}</a></li>)}</ul> : <p className="search__empty">Essayez « expériences », « compétences » ou « contact ».</p>}
+        {results.length ? <ul>{results.map((section) => <li key={section.id} role="option"><a href={`#${section.id}`} onClick={(event) => { event.preventDefault(); choose(section.id); }}><span>{section.label}</span>{isSectionReady(section.id) ? <ArrowRight size={17} aria-hidden="true" /> : <span className="coming-soon">À venir</span>}</a></li>)}</ul> : <p className="search__empty">Essayez « expériences », « compétences » ou « contact ».</p>}
       </div>}
     </div>
   );

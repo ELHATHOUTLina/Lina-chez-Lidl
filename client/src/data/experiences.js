@@ -1,7 +1,6 @@
 export const professionalExperiences = [
   {
-    id: 'aldi', company: 'ALDI', role: 'Employée libre-service', logo: '',
-    futureLogo: '/assets/canva/aldi.png', theme: 'aldi',
+    id: 'aldi', company: 'ALDI', role: 'Employée libre-service', theme: 'aldi',
     facts: [
       { type: 'location', label: 'Lieu', value: 'Mantes-la-Ville' },
       { type: 'calendar', label: 'Période', value: 'Juin 2026 à août 2026' },
@@ -13,8 +12,7 @@ export const professionalExperiences = [
     cornerIcon: 'cart',
   },
   {
-    id: 'sucreation', company: 'Sucréation', role: 'Employée de vente', logo: '',
-    futureLogo: '/assets/canva/sucreation.png', theme: 'sucreation',
+    id: 'sucreation', company: 'Sucréation', role: 'Employée de vente', theme: 'sucreation',
     facts: [
       { type: 'location', label: 'Lieu', value: 'Mantes-la-Jolie' },
       { type: 'calendar', label: 'Période', value: 'Sept. 2025 à oct. 2025' },
@@ -26,8 +24,7 @@ export const professionalExperiences = [
     cornerIcon: 'basket',
   },
   {
-    id: 'primark', company: 'PRIMARK', role: 'Vendeuse polyvalente', logo: '',
-    futureLogo: '/assets/canva/primark.png', theme: 'primark',
+    id: 'primark', company: 'PRIMARK', role: 'Vendeuse polyvalente', theme: 'primark',
     facts: [
       { type: 'location', label: 'Lieu', value: 'Évry-Courcouronnes' },
       { type: 'calendar', label: 'Période', value: 'Juin 2025 à août 2025' },
@@ -41,8 +38,7 @@ export const professionalExperiences = [
 ];
 
 export const volunteering = {
-  title: 'Mon engagement bénévole', organisation: 'Croix-Rouge française', logo: '',
-  futureLogo: '/assets/canva/croix-rouge.png',
+  title: 'Mon engagement bénévole', organisation: 'Croix-Rouge française',
   facts: [
     { type: 'organisation', label: 'Organisation', value: 'Croix-Rouge du Pays Mantais' },
     { type: 'location', label: 'Lieu', value: 'Mantes-la-Jolie' },
