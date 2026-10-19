@@ -2,16 +2,18 @@ const path = require('node:path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 
 module.exports = (_, argv) => {
   const production = argv.mode === 'production';
+  const publicPath = production ? '/Lina-chez-Lidl/' : '/';
   return {
     context: __dirname,
     entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'assets/js/[name].[contenthash:8].js',
-      publicPath: '/',
+      publicPath,
       clean: true,
     },
     resolve: { extensions: ['.js', '.jsx'] },
@@ -26,9 +28,10 @@ module.exports = (_, argv) => {
       ],
     },
     plugins: [
-      new HtmlWebpackPlugin({ template: './public/index.html' }),
+      new HtmlWebpackPlugin({ template: './public/index.html', publicPath }),
       new CopyWebpackPlugin({ patterns: [{ from: 'public', to: '.', globOptions: { ignore: ['**/index.html', '**/.gitkeep'] } }] }),
       ...(production ? [new MiniCssExtractPlugin({ filename: 'assets/css/[name].[contenthash:8].css' })] : []),
+      new webpack.DefinePlugin({ __PUBLIC_PATH__: JSON.stringify(publicPath) }),
     ],
     devtool: production ? false : 'eval-cheap-module-source-map',
     devServer: {

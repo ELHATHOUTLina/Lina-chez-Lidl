@@ -12,7 +12,7 @@ export const profile = {
   phone: '07 65 87 44 68',
   phoneHref: 'tel:+33765874468',
   email: 'elhathout.lina@gmail.com',
-  logo: '/assets/logo/lina-chez-lidl.png',
-  cv: '/documents/CV_Lidl.pdf',
+  logo: `${__PUBLIC_PATH__}assets/logo/lina-chez-lidl.png`,
+  cv: `${__PUBLIC_PATH__}documents/CV_Lidl.pdf`,
 };
 
