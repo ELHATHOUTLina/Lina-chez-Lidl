@@ -13,7 +13,7 @@ const details = [
   ['Temps de travail', `${profile.weeklyHours} h`],
   ['Disponibilité', profile.availability],
   ['Localisation', profile.location],
-  ['Mobilité', 'Département 78'],
+  ['Mobilité', 'Mobile dans le Mantois et ses alentours (Mantes-la-Jolie, Mantes-la-Ville, Buchelay, Magnanville et communes voisines)'],
 ];
 
 export default function TicketModal({ open, onClose }) {

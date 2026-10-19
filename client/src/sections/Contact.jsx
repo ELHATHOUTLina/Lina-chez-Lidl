@@ -6,7 +6,7 @@ import '../styles/contact.css';
 
 const facts = [
   { Icon: MapPin, label: 'Mantes-la-Jolie (78)' },
-  { Icon: Store, label: 'Mobile dans tout le département 78' },
+  { Icon: Store, label: 'Mobile dans le Mantois et ses alentours (Mantes-la-Jolie, Mantes-la-Ville, Buchelay, Magnanville et communes voisines)' },
   { Icon: Check, label: 'Disponible immédiatement' },
   { Icon: Clock3, label: 'Temps plein 35 h' },
   { Icon: Check, label: 'CDD ou CDI' },

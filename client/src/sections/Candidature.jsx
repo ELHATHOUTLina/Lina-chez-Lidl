@@ -31,7 +31,7 @@ export default function Candidature() {
             <span className="hero__separator"> • </span>
             <span>Temps plein 35 h</span>
             <span className="hero__separator"> • </span>
-            <span>Mobile dans le 78</span>
+            <span>Mobile dans le Mantois et ses alentours (Mantes-la-Jolie, Mantes-la-Ville, Buchelay, Magnanville et communes voisines)</span>
           </p>
           <p className="hero__description">
             Je souhaite rejoindre Lidl en CDD ou CDI à temps plein. Sérieuse,
@@ -65,7 +65,7 @@ export default function Candidature() {
           <span className="hero__outline" />
           <div className="hero__mobility">
             <span className="hero__mobility-label">MOBILE DANS LE</span>
-            <span className="hero__department">78<span>.</span></span>
+            <span className="hero__department">Mantois et ses alentours<span>.</span></span>
             <span className="hero__mobility-footer">À vos côtés en magasin.</span>
           </div>
           <div className="hero__contract">CDD <span>/</span> CDI</div>

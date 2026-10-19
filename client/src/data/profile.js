@@ -3,7 +3,7 @@ export const profile = {
   age: 21,
   role: 'Employée polyvalente',
   location: 'Mantes-la-Jolie',
-  mobility: 'Mobile dans le 78',
+  mobility: 'Mobile dans le Mantois et ses alentours (Mantes-la-Jolie, Mantes-la-Ville, Buchelay, Magnanville et communes voisines)',
   contracts: ['CDD', 'CDI'],
   weeklyHours: 35,
   availability: 'Immédiate',

@@ -4,7 +4,7 @@ import '../styles/offers.css';
 const availabilityCards = [
   { id: 'immediate', Icon: CalendarCheck2, title: 'Immédiatement', description: 'Disponible dès maintenant' },
   { id: 'hours', Icon: Clock3, title: '35 h / semaine', description: 'CDD ou CDI' },
-  { id: 'mobility', Icon: MapPin, title: 'Mobile dans le 78', description: 'Week-ends compris' },
+  { id: 'mobility', Icon: MapPin, title: 'Mobile dans le Mantois et ses alentours (Mantes-la-Jolie, Mantes-la-Ville, Buchelay, Magnanville et communes voisines)', description: 'Week-ends compris' },
 ];
 
 export default function Disponibilite() {

@@ -197,11 +197,12 @@
 }
 
 .hero__department {
-  margin-left: 12px;
-  font-size: clamp(108px, 10.7vw, 154px);
+  max-width: 290px;
+  margin-top: 30px;
   font-weight: 900;
-  line-height: .9;
-  letter-spacing: -10px;
+  font-size: clamp(22px, 3.2vw, 40px);
+  line-height: 1.05;
+  text-align: center;
 }
 
 .hero__department > span {
@@ -296,7 +297,7 @@
   .hero__art { min-height: 320px; }
   .hero__mobility { width: 260px; }
   .hero__outline { width: 282px; }
-  .hero__department { font-size: 116px; }
+  .hero__department { max-width: 250px; margin-top: 28px; font-size: clamp(22px, 5vw, 32px); }
   .hero__contract { right: -4px; bottom: 8px; padding: 11px 17px; font-size: 17px; }
 }
 
@@ -316,7 +317,7 @@
 
   .hero__mobility { width: 270px; }
   .hero__outline { width: 292px; }
-  .hero__department { font-size: 120px; }
+  .hero__department { max-width: 250px; margin-top: 26px; font-size: clamp(22px, 7vw, 30px); }
   .hero__contract { right: 6px; bottom: 5px; }
   .hero__red-corner { top: 54%; left: 45%; width: 260px; height: 260px; }
   .hero__banner::before {
@@ -362,7 +363,7 @@
   .hero__art { width: 100%; min-height: 286px; margin-top: 0; margin-bottom: -14px; }
   .hero__mobility { width: min(250px, calc(100% - 18px)); }
   .hero__mobility-label { font-size: 11px; letter-spacing: 1.6px; }
-  .hero__department { margin-left: 8px; font-size: 108px; letter-spacing: -8px; }
+  .hero__department { max-width: 220px; margin-top: 24px; font-size: 24px; line-height: 1.1; }
   .hero__mobility-footer { margin-top: 10px; font-size: 12px; }
   .hero__outline { width: min(270px, 100%); }
   .hero__red-corner { top: 56%; left: 47%; width: 225px; height: 225px; }
