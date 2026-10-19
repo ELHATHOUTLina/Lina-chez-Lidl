@@ -27,7 +27,8 @@
 .contact-button--yellow:hover { border-color: #fff55c; background: #fff55c; }
 .qr-card { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 25px 20px; text-align: center; }
 .qr-card__frame { display: grid; place-items: center; width: 156px; height: 156px; padding: 10px; border-radius: 7px; background: white; color: var(--blue); }
-.qr-card__frame img { width: 100%; height: 100%; }
+.qr-card__link { display: block; width: 100%; height: 100%; }
+.qr-card__frame img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .qr-card h3 { margin: 20px 0 8px; font-size: 15px; }
 .qr-card p, .qr-card > a { color: #dbe7f4; font-size: 10px; line-height: 1.55; }
 .qr-card > a { color: var(--yellow); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }

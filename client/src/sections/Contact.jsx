@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
-import QRCode from 'qrcode';
-import { Check, Clock3, Copy, Download, ExternalLink, Mail, MapPin, Phone, QrCode, Store } from 'lucide-react';
+import { useState } from 'react';
+import { Check, Clock3, Copy, Download, ExternalLink, Mail, MapPin, Phone, Store } from 'lucide-react';
 import { profile } from '../data/profile';
 import { publicSiteUrl } from '../data/site';
 import '../styles/contact.css';
@@ -12,17 +11,10 @@ const facts = [
   { Icon: Clock3, label: 'Temps plein 35 h' },
   { Icon: Check, label: 'CDD ou CDI' },
 ];
+const qrImage = `${__PUBLIC_PATH__}assets/images/QR_Code_Lina_chez_Lidl.png`;
 
 export default function Contact() {
   const [copyStatus, setCopyStatus] = useState('');
-  const [qrSource, setQrSource] = useState('');
-
-  useEffect(() => {
-    if (!publicSiteUrl) return;
-    QRCode.toDataURL(publicSiteUrl, { width: 260, margin: 2, color: { dark: '#003e85', light: '#ffffff' } })
-      .then(setQrSource)
-      .catch(() => setQrSource(''));
-  }, []);
 
   async function copyEmail() {
     try {
@@ -78,7 +70,9 @@ export default function Contact() {
 
           <aside className="qr-card" aria-labelledby="qr-title">
             <div className="qr-card__frame">
-              {qrSource ? <img src={qrSource} alt="QR code vers le site public de la candidature" /> : <QrCode size={68} strokeWidth={1.2} aria-hidden="true" />}
+              <a className="qr-card__link" href={publicSiteUrl} target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le site Lina chez Lidl dans un nouvel onglet">
+                <img src={qrImage} alt="QR code pour découvrir le site Lina chez Lidl" />
+              </a>
             </div>
             <h3 id="qr-title">Retrouver cette candidature</h3>
             {publicSiteUrl
